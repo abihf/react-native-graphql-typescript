@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "sdkVersion": "26.0.0",
+    "packagerOpts": {
+      "sourceExts": [
+        "ts",
+        "tsx"
+      ],
+      "transformer": "node_modules/react-native-typescript-transformer/index.js"
+    },
+    "slug": "graphql-demo",
+    "name": "graphql-demo",
+    "androidStatusBarColor": "#334393",
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#334393"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "graphql-demo",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@playlyfe/gql": "^2.6.0",
+    "@types/deepmerge": "^2.1.0",
+    "@types/expo": "^26.0.3",
+    "@types/immutable": "^3.8.7",
+    "@types/react": "^16.3.11",
+    "@types/react-native": "^0.54",
+    "@types/react-native-vector-icons": "^4.6.0",
+    "@types/react-navigation": "^1.5.9",
+    "apollo-codegen": "^0.19.1",
+    "get-graphql-schema": "^2.1.1",
+    "jest-expo": "^27.0.1",
+    "react-native-scripts": "^1.14.0",
+    "react-native-typescript-transformer": "^1.2.4",
+    "react-test-renderer": "^16.3.2",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.1"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "babel": {
+    "presets": [
+      "babel-preset-expo"
+    ],
+    "env": {
+      "development": {
+        "plugins": [
+          "transform-react-jsx-source"
+        ]
+      }
+    }
+  },
+  "scripts": {
+    "update-schema": "get-graphql-schema https://api.graph.cool/simple/v1/cjgzk14j99a8d017511lplhae > schema.gql",
+    "update-schema:json": "apollo-codegen introspect-schema https://api.graph.cool/simple/v1/cjgzk14j99a8d017511lplhae --output schema.json",
+    "gen-types": "apollo-codegen generate '**/*.tsx' --schema schema.json --target typescript --tag-name gql --output src/graphql-types.ts",
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "jest",
+    "lint": "tslint"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "@babel/core": "7.0.0-beta.38",
+    "apollo-boost": "^0.1.6",
+    "apollo-client": "^2.3.1",
+    "deepmerge": "^2.1.0",
+    "expo": "^27.0.1",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "immutable": "^3.8.2",
+    "native-base": "^2.4.3",
+    "react": "16.3.2",
+    "react-apollo": "^2.1.3",
+    "react-native": "^0.54",
+    "react-navigation": "^1.5.9"
+  }
+}
